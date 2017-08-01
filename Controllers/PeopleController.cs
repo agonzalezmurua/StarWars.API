@@ -7,15 +7,17 @@ using API.Stores;
 namespace API.Controllers
 {
     [Route("api/[controller]")]
-    public class PeopleControllers : Controller
+    public class PeopleController : Controller
     {
         [HttpGet, Route("")]
-        public IEnumerable<People> GetAll() {
+        public IEnumerable<People> GetAll()
+        {
             return PeopleStore.Store;
         }
 
         [HttpGet, Route("{id:int}")]
-        public People Get(int id) {
+        public People Get(int id)
+        {
             return PeopleStore.Store.FirstOrDefault( people => people.id == id );
         }
     }
