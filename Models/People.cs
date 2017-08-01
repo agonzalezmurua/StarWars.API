@@ -1,4 +1,4 @@
-namespace API.Models
+namespace StarWars.Models
 {
     public class People
     {
@@ -6,7 +6,7 @@ namespace API.Models
         public string name { get; set; }
         public Planet homeworld { get; set; }
         public Genders gender { get; set; }
-
+        public Afiliations afiliation { get; set; }
         public int strength { get; set; }
         public int agility { get; set; }
         public int wisdom { get; set; }

@@ -1,10 +1,10 @@
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using System.Linq;
-using API.Models;
-using API.Stores;
+using StarWars.Models;
+using StarWars.Stores;
 
-namespace API.Controllers
+namespace StarWars.Controllers
 {
     [Route("api/[controller]")]
     public class PeopleController : Controller

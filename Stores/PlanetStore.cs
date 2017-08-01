@@ -1,14 +1,18 @@
 using System.Collections.Generic;
+using System.Linq;
 
-namespace API.Stores
+namespace StarWars.Stores
 {
     public static class PlanetStore {
-        private static List<API.Models.Planet> _planets;
-        public static List<API.Models.Planet> Planets
+        private static List<StarWars.Models.Planet> _planets;
+        public static List<StarWars.Models.Planet> Store
         {
             get { return _planets;}
             set { _planets = value;}
         }
-        
+        public static StarWars.Models.Planet Get(int id)
+        {
+            return _planets.FirstOrDefault( planet => planet.id == id );
+        }
     }
 }

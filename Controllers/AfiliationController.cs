@@ -1,10 +1,11 @@
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using System.Linq;
-using API.Models;
+using StarWars.Models;
+using StarWars.Stores;
 using System;
 
-namespace API.Controllers
+namespace StarWars.Controllers
 {
     [Route("api/[controller]")]
     public class AfiliationController : Controller
@@ -25,6 +26,18 @@ namespace API.Controllers
         {
             Afiliations afiliation = (Afiliations)intVal;
             return new KeyValuePair<string, int>( afiliation.ToString(), (int)afiliation );
+        }
+
+        [HttpGet, Route("{afiliation}/people")]
+        public IEnumerable<People> GetPeopleFromAffiliation(Afiliations afiliation)
+        {
+            return PeopleStore.Store.Where( people => people.afiliation == afiliation );
+        }
+
+        [HttpGet, Route("{afiliation}/planets")]
+        public IEnumerable<Planet> GetPlanetsFromAffiliation(Afiliations afiliation)
+        {
+            return PlanetStore.Store.Where( planet => planet.afiliation == afiliation );
         }
 
         [HttpGet, Route("{stringVal:alpha}")]

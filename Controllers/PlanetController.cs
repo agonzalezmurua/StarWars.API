@@ -1,10 +1,10 @@
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using System.Linq;
-using API.Models;
-using API.Stores;
+using StarWars.Models;
+using StarWars.Stores;
 
-namespace API.Controllers
+namespace StarWars.Controllers
 {
     [Route("api/[controller]")]
     public class PlanetController : Controller
@@ -12,13 +12,13 @@ namespace API.Controllers
         [HttpGet, Route("")]
         public IEnumerable<Planet> GetAll() 
         {
-            return PlanetStore.Planets;
+            return PlanetStore.Store;
         }
 
         [HttpGet, Route("{id:int}")]
         public Planet Get(int id) 
         {
-            return PlanetStore.Planets.FirstOrDefault( planet => planet.id == id);
+            return PlanetStore.Store.FirstOrDefault( planet => planet.id == id);
         }
 
         [HttpGet, Route("{planetId:int}/people")]
