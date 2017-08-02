@@ -1,15 +1,12 @@
 namespace StarWars.Models
 {
     public enum Climates {
-        ARID,
-        DRY,
-        SEMIARID,
-        CONTINENTAL,
-        TROPICAL,
-        MARINE,
-        BOREAL,
-        POLAR,
+        Dry,
+        Continental,
+        Tropical,
+        Marine,
+        Boreal,
         TUNDRA,
-        ICE
+        Temperate,
     }
 }

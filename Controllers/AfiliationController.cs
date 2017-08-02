@@ -31,13 +31,13 @@ namespace StarWars.Controllers
         [HttpGet, Route("{afiliation}/people")]
         public IEnumerable<People> GetPeopleFromAffiliation(Afiliations afiliation)
         {
-            return PeopleStore.Store.Where( people => people.afiliation == afiliation );
+            return PeopleStore.Store.Where( people => people.afiliation == afiliation.ToString() );
         }
 
         [HttpGet, Route("{afiliation}/planets")]
         public IEnumerable<Planet> GetPlanetsFromAffiliation(Afiliations afiliation)
         {
-            return PlanetStore.Store.Where( planet => planet.afiliation == afiliation );
+            return PlanetStore.Store.Where( planet => planet.afiliation == afiliation.ToString() );
         }
 
         [HttpGet, Route("{stringVal:alpha}")]

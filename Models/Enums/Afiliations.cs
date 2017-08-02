@@ -2,13 +2,11 @@ namespace StarWars.Models
 {
     public enum Afiliations
     {
-        NEUTRAL,
-        JEDI,
-        SITH,
-        NEW_REPUBLIC,
-        OLD_REPUBLIC,
-        RESISTANCE,
-        IMPERIAL,
-        GALLATIC_ALLIANCE
+        Neutral,
+        New_Republic,
+        Old_Republic,
+        Resistance,
+        Imperial,
+        Galactic_Republic
     }
 }
