@@ -7,7 +7,7 @@ using StarWars.Stores;
 namespace StarWars.Controllers
 {
     [Route("api/[controller]")]
-    public class PlanetController : Controller
+    public class PlanetsController : Controller
     {
         [HttpGet, Route("")]
         public IEnumerable<Planet> GetAll() 
@@ -24,7 +24,7 @@ namespace StarWars.Controllers
         [HttpGet, Route("{planetId:int}/people")]
         public IEnumerable<People> GetPeopleByPlanet(int planetId)
         {
-            return PeopleStore.Store.Where( people => people.homeworld.id == planetId );
+            return PeopleStore.Store.Where( people => people.homeworld != null && people.homeworld.id == planetId );
         }
     }
 }

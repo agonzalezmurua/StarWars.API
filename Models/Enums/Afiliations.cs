@@ -2,14 +2,14 @@ namespace StarWars.Models
 {
     public enum Afiliations
     {
-        Unknown,
-        Neutral,
-        New_Republic,
-        Old_Republic,
-        Rebel_Alliance,
-        Imperial,
-        Galactic_Republic,
-        Nightbrothers,
-        Nightsisters,
+        unknown,
+        neutral,
+        new_republic,
+        old_republic,
+        rebel_alliance,
+        galatic_empire,
+        galatic_republic,
+        nightbrothers,
+        nightsisters,
     }
 }

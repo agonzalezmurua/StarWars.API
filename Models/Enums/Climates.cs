@@ -1,13 +1,13 @@
 namespace StarWars.Models
 {
     public enum Climates {
-        Unknown,
-        Dry,
-        Continental,
-        Tropical,
-        Marine,
-        Boreal,
-        Temperate,
-        Swamp,
+        unknown,
+        dry,
+        continental,
+        tropical,
+        marine,
+        boreal,
+        temperate,
+        swamp,
     }
 }
