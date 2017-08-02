@@ -19,6 +19,13 @@ namespace StarWars.Models
             set { _afiliation = (Afiliations)System.Enum.Parse(typeof(Afiliations),value);}
         }
         
+        private Occupations _occupation;
+        public string occupation
+        {
+            get { return _occupation.ToString();}
+            set { _occupation = (Occupations)System.Enum.Parse(typeof(Occupations),value);}
+        }
+        
         public int strength { get; set; }
         public int agility { get; set; }
         public int wisdom { get; set; }
