@@ -30,5 +30,6 @@ namespace StarWars.Models
         public int agility { get; set; }
         public int wisdom { get; set; }
         public int resilience { get; set; }
+        public string avatar { get; set; }
     }
 }

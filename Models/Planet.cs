@@ -16,8 +16,8 @@ namespace StarWars.Models
             get { return _afiliation.ToString();}
             set { _afiliation = (Afiliations)System.Enum.Parse(typeof(Afiliations),value);}
         }
-        public long population { get; set; }
-        public bool hasWater { get; set; }
-
+        public long poblacion { get; set; }
+        public bool isTieneAgua { get; set; }
+        public string avatar { get; set; }
     }
 }
