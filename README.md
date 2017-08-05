@@ -43,7 +43,7 @@ API_URL/api/occupation
 
 #### Personas por ocupación - GET
 ```ES6
-API_URL/api/occupation
+API_URL/api/{occupation}/people
 ```
 
 ### Planetas
