@@ -7,24 +7,29 @@ using StarWars.Stores;
 namespace StarWars.Controllers
 {
     [Route("api/[controller]")]
+    [Produces("application/json")]
     public class PlanetsController : Controller
     {
         [HttpGet, Route("")]
-        public IEnumerable<Planet> GetAll() 
+        public JsonResult GetAll() 
         {
-            return PlanetStore.Store;
+            return Json(PlanetStore.Store);
         }
 
         [HttpGet, Route("{id:int}")]
-        public Planet Get(int id) 
+        public JsonResult Get(int id) 
         {
-            return PlanetStore.Store.FirstOrDefault( planet => planet.id == id);
+            return Json(
+                PlanetStore.Store.FirstOrDefault( planet => planet.id == id)
+            );
         }
 
         [HttpGet, Route("{planetId:int}/people")]
-        public IEnumerable<People> GetPeopleByPlanet(int planetId)
+        public JsonResult GetPeopleByPlanet(int planetId)
         {
-            return PeopleStore.Store.Where( people => people.homeworld != null && people.homeworld.id == planetId );
+            return Json(
+                PeopleStore.Store.Where( people => people.planeta_natal != null && people.planeta_natal.id == planetId )
+            );
         }
     }
 }

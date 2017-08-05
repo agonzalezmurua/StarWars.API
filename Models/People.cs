@@ -3,13 +3,13 @@ namespace StarWars.Models
     public class People
     {
         public int id { get; set; }
-        public string name { get; set; }
-        public Planet homeworld { get; set; }
-        private Genders _gender;
-        public string gender
+        public string nombre { get; set; }
+        public Planet planeta_natal { get; set; }
+        private Genders _genero;
+        public string genero
         {
-            get { return _gender.ToString();}
-            set { _gender = (Genders)System.Enum.Parse(typeof(Genders),value);}
+            get { return _genero.ToString();}
+            set { _genero = (Genders)System.Enum.Parse(typeof(Genders),value);}
         }
         
         private Afiliations _afiliation;

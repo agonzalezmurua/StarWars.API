@@ -3,12 +3,12 @@ namespace StarWars.Models
     public class Planet
     {
         public int id { get; set; }
-        public string name { get; set; }
-        private Climates _climate;
-        public string climate
+        public string nombre { get; set; }
+        private Climates _clima;
+        public string clima
         {
-            get { return _climate.ToString();}
-            set { _climate = (Climates)System.Enum.Parse(typeof(Climates),value);}
+            get { return _clima.ToString();}
+            set { _clima = (Climates)System.Enum.Parse(typeof(Climates),value);}
         }
         private Afiliations _afiliation;
         public string afiliation

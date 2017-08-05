@@ -16,6 +16,7 @@ namespace StarWars.API
             LoadFakeDatabase();
 
             var host = new WebHostBuilder()
+                .UseUrls("http://localhost:5000;http://starwarsapi.redirectme.net")
                 .UseKestrel()
                 .UseContentRoot(Directory.GetCurrentDirectory())
                 .UseIISIntegration()
@@ -32,32 +33,32 @@ namespace StarWars.API
                 new Models.Planet() {
                     id = 1,
                     afiliation = Afiliations.neutral.ToString(),
-                    climate = Climates.dry.ToString(),
+                    clima = Climates.seco.ToString(),
                     population = 5000,
-                    name = "Stewjon",
+                    nombre = "Stewjon",
                     hasWater = true
                 },
                 new Models.Planet() {
                     id = 2,
-                    afiliation = Afiliations.old_republic.ToString(),
-                    climate = Climates.temperate.ToString(),
+                    afiliation = Afiliations.vieja_republica.ToString(),
+                    clima = Climates.temperado.ToString(),
                     population = 1000000000000,
-                    name = "Coruscant",
+                    nombre = "Coruscant",
                     hasWater = true
                 },
                 new Models.Planet() {
                     id = 3,
-                    afiliation = Afiliations.unknown.ToString(),
-                    climate = Climates.unknown.ToString(),
-                    name = "Haruun Kai",
+                    afiliation = Afiliations.neutral.ToString(),
+                    clima = Climates.unknown.ToString(),
+                    nombre = "Haruun Kai",
                     population = 500000,
                     hasWater = false,
                 },
                 new Models.Planet() {
                     id = 4,
-                    afiliation = Afiliations.nightbrothers.ToString(),
-                    climate = Climates.swamp.ToString(),
-                    name = "Dathomir",
+                    afiliation = Afiliations.hermanos_nocturnos.ToString(),
+                    clima = Climates.pantanoso.ToString(),
+                    nombre = "Dathomir",
                     population = 240000,
                     hasWater = true,
                 } 
@@ -67,75 +68,75 @@ namespace StarWars.API
             {
                 new Models.People() {
                     id = 1,
-                    afiliation = Afiliations.galatic_republic.ToString(),
+                    afiliation = Afiliations.republica_galactica.ToString(),
                     agility = 5,
                     wisdom = 7,
-                    gender = Genders.male.ToString(),
+                    genero = Genders.masculino.ToString(),
                     strength = 3,
                     resilience = 6,
-                    name = "Obi-Wan Kennobi",
+                    nombre = "Obi-Wan Kennobi",
                     occupation = Occupations.jedi.ToString(),
-                    homeworld = Stores.PlanetStore.Get(1)
+                    planeta_natal = Stores.PlanetStore.Get(1)
                 },
                 new Models.People() {
                     id = 2,
-                    afiliation = Afiliations.galatic_republic.ToString(),
+                    afiliation = Afiliations.republica_galactica.ToString(),
                     agility = 9,
                     wisdom = 10,
-                    gender = Genders.male.ToString(),
+                    genero = Genders.masculino.ToString(),
                     strength = 1,
                     resilience = 7,
-                    name = "Yoda",
+                    nombre = "Yoda",
                     occupation = Occupations.jedi.ToString(),
-                    homeworld = null
+                    planeta_natal = null
                 },
                 new Models.People() {
                     id = 3,
-                    afiliation = Afiliations.rebel_alliance.ToString(),
+                    afiliation = Afiliations.alianza_rebelde.ToString(),
                     agility = 6,
                     wisdom = 6,
-                    gender = Genders.male.ToString(),
+                    genero = Genders.masculino.ToString(),
                     strength = 7,
                     resilience = 4,
-                    name = "Mace Windu",
+                    nombre = "Mace Windu",
                     occupation = Occupations.jedi.ToString(),
-                    homeworld = Stores.PlanetStore.Get(3)
+                    planeta_natal = Stores.PlanetStore.Get(3)
                 },
                 new Models.People() {
                     id = 4,
-                    afiliation = Afiliations.galatic_republic.ToString(),
+                    afiliation = Afiliations.republica_galactica.ToString(),
                     agility = 5,
                     wisdom = 8,
-                    gender = Genders.male.ToString(),
+                    genero = Genders.masculino.ToString(),
                     strength = 5,
                     resilience = 6,
-                    name = "Qui-Gon Jinn",
+                    nombre = "Qui-Gon Jinn",
                     occupation = Occupations.jedi.ToString(),
-                    homeworld = Stores.PlanetStore.Get(2)
+                    planeta_natal = Stores.PlanetStore.Get(2)
                 },
                 new Models.People() {
                     id = 5,
-                    afiliation = Afiliations.nightbrothers.ToString(),
+                    afiliation = Afiliations.hermanos_nocturnos.ToString(),
                     agility = 7,
                     wisdom = 4,
-                    gender = Genders.male.ToString(),
+                    genero = Genders.masculino.ToString(),
                     strength = 6,
                     resilience = 9,
-                    name =  "Darth Maul",
+                    nombre =  "Darth Maul",
                     occupation = Occupations.sith.ToString(),
-                    homeworld = Stores.PlanetStore.Get(4)
+                    planeta_natal = Stores.PlanetStore.Get(4)
                 },
                 new Models.People() {
                     id = 6,
-                    afiliation = Afiliations.nightsisters.ToString(),
+                    afiliation = Afiliations.hermanas_nocturnas.ToString(),
                     agility = 9,
                     wisdom = 3,
-                    gender = Genders.female.ToString(),
+                    genero = Genders.femenino.ToString(),
                     strength = 7,
                     resilience = 10,
-                    name =  "Asajj Ventress",
+                    nombre =  "Asajj Ventress",
                     occupation = Occupations.sith.ToString(),
-                    homeworld = Stores.PlanetStore.Get(4)
+                    planeta_natal = Stores.PlanetStore.Get(4)
                 }
             };
         }

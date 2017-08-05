@@ -8,24 +8,31 @@ using System;
 namespace StarWars.Controllers
 {
     [Route("api/[controller]")]
+    [Produces("application/json")]
     public class AfiliationsController : Controller
     {
         [HttpGet, Route("")]
-        public IEnumerable<string> GetAll()
+        public JsonResult GetAll()
         {
-            return Enum.GetNames(typeof(Afiliations));
+            return Json(
+                Enum.GetNames(typeof(Afiliations))
+            );
         }
 
         [HttpGet, Route("{afiliation}/people")]
-        public IEnumerable<People> GetPeopleFromAffiliation(Afiliations afiliation)
+        public JsonResult GetPeopleFromAffiliation(Afiliations afiliation)
         {
-            return PeopleStore.Store.Where( people => people.afiliation.ToString() == afiliation.ToString() );
+            return Json(
+                PeopleStore.Store.Where( people => people.afiliation.ToString() == afiliation.ToString() )
+            );
         }
 
         [HttpGet, Route("{afiliation}/planets")]
-        public IEnumerable<Planet> GetPlanetsFromAffiliation(Afiliations afiliation)
+        public JsonResult GetPlanetsFromAffiliation(Afiliations afiliation)
         {
-            return PlanetStore.Store.Where( planet => planet.afiliation.ToString() == afiliation.ToString() );
+            return Json(
+                PlanetStore.Store.Where( planet => planet.afiliation.ToString() == afiliation.ToString() )
+            );
         }
     }
 }

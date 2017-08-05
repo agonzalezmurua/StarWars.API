@@ -2,9 +2,9 @@ namespace StarWars.Models
 {
     public enum Genders {
         na,
-        undefined,
-        unknown,
-        male,
-        female
+        sin_definir,
+        desconocido,
+        masculino,
+        femenino
     }
 }
