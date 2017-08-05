@@ -20,5 +20,11 @@ namespace StarWars.Controllers
         {
             return PeopleStore.Store.FirstOrDefault( people => people.id == id );
         }
+
+        [HttpGet, Route("occupation/{occupation}")]
+        public IEnumerable<People> GetByOccupation(Occupations occupation)
+        {
+            return PeopleStore.Store.Where(people => people.occupation == occupation.ToString());
+        }
     }
 }
